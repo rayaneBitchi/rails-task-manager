@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button>a {
+    color: black;
+}
+
+button {
+    border-radius: 8px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}

@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h1 class="mb-4">My Tasks</h1>
+   <ul class="d-flex flex-column gap-1">
+     <% @tasks.each do |task|  %>
+    <% checked = task.completed %>
+    <li>
+        <% if task.completed %>
+            <i class="fa-regular fa-square-check"></i>
+        <% else %>
+            <i class='fa-regular fa-square'></i>
+        <% end %>
+        <span>
+        <%= link_to task.title, task_path(task.id) %>
+        <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        &#8201;&#8201;
+        <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </span>
+    </li>
+    <% end %>
+    </ul>
+    <hr />
+    <%= link_to new_task_path do %>
+    <i class="fa-solid fa-plus"></i>
+    <span>&#8201;Add a new task</span>
+    <% end %>
+
+</div>
